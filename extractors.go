@@ -91,6 +91,9 @@ type declaredSet struct {
 	manifestEco map[string]string                 // dir -> ecosystem (for declared-only fallbacks)
 	unpinned    []specNote
 	vcs         []specNote
+	// goToolchain maps a module directory to its pinned toolchain version
+	// ("toolchain go1.25.3"); absent means the Go version is only a minimum.
+	goToolchain map[string]string
 }
 
 func (d *declaredSet) add(dir, eco, name, where string, line int, dev bool) {
@@ -119,7 +122,7 @@ var (
 
 // declaredDeps reads direct dependency declarations from manifests.
 func declaredDeps(root string, inv *facts.Inventory) *declaredSet {
-	d := &declaredSet{byDir: map[string]map[string]declaredDep{}, manifestEco: map[string]string{}}
+	d := &declaredSet{byDir: map[string]map[string]declaredDep{}, manifestEco: map[string]string{}, goToolchain: map[string]string{}}
 	for _, f := range inv.Files {
 		if f.Kind == facts.KindVendored || f.Kind == facts.KindGenerated {
 			continue
@@ -206,6 +209,9 @@ func declaredDeps(root string, inv *facts.Inventory) *declaredSet {
 				case line == ")":
 					inBlock = false
 					continue
+				}
+				if v, ok := strings.CutPrefix(line, "toolchain go"); ok {
+					d.goToolchain[dir] = strings.TrimSpace(v)
 				}
 				if !inBlock && !strings.HasPrefix(line, "require ") {
 					continue

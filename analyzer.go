@@ -162,6 +162,15 @@ func (*Analyzer) Analyze(ctx context.Context, in *analyzer.Input) (*analyzer.Res
 
 	pkgs := make([]facts.Package, 0, len(byKey))
 	for _, p := range byKey {
+		// The go directive is a minimum language version; only a toolchain
+		// directive pins the standard library actually used.
+		if p.Ecosystem == "Go" && p.Name == "stdlib" && len(p.Locations) > 0 {
+			if tc, ok := declared.goToolchain[path.Dir(p.Locations[0])]; ok {
+				p.Version = tc
+			} else {
+				p.Version = ""
+			}
+		}
 		dir := "."
 		if len(p.Locations) > 0 {
 			dir = path.Dir(p.Locations[0])

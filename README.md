@@ -13,7 +13,7 @@ Lockfile parsing uses Google's [OSV-SCALIBR](https://github.com/google/osv-scali
 |---|---|
 | Requires | `inventory` |
 | Provides | `dependencies` evidence, `sbom.cdx.json` artifact |
-| Scores | Dependency Health |
+| Scores | Dependency Hygiene |
 | Network / AI | none / none |
 
 ```bash

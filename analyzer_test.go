@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	dependencies "github.com/capybari/capybari-analyzer-dependencies"
-	"github.com/capybari/capybari-core/analyzer"
-	"github.com/capybari/capybari-core/analyzertest"
-	"github.com/capybari/capybari-core/facts"
-	"github.com/capybari/capybari-schemas"
+	dependencies "github.com/capybari-repo/capybari-analyzer-dependencies"
+	"github.com/capybari-repo/capybari-core/analyzer"
+	"github.com/capybari-repo/capybari-core/analyzertest"
+	"github.com/capybari-repo/capybari-core/facts"
+	"github.com/capybari-repo/capybari-schemas"
 	"gopkg.in/yaml.v3"
 )
 

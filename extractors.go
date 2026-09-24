@@ -26,8 +26,8 @@ import (
 	"github.com/google/osv-scalibr/extractor/filesystem/language/ruby/gemfilelock"
 	"github.com/google/osv-scalibr/extractor/filesystem/language/rust/cargolock"
 
-	"github.com/capybari/capybari-core/facts"
-	"github.com/capybari/capybari-core/fsutil"
+	"github.com/capybari-repo/capybari-core/facts"
+	"github.com/capybari-repo/capybari-core/fsutil"
 )
 
 // extractors returns the SCALIBR lockfile extractors bundled in Capybari.

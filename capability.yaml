@@ -21,7 +21,7 @@ engines:
     version: 0.5.3
     license: Apache-2.0
     url: https://github.com/google/osv-scalibr
-methodology: https://github.com/capybari/capybari-analyzer-dependencies/blob/main/docs/methodology.md
+methodology: https://github.com/capybari-repo/capybari-analyzer-dependencies/blob/main/docs/methodology.md
 follow_ups:
   - capability: vulns
     reason: Dependencies with exact versions were found; check them against known-vulnerability advisories (OSV.dev).

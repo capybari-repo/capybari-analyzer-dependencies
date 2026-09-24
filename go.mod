@@ -1,10 +1,10 @@
-module github.com/capybari/capybari-analyzer-dependencies
+module github.com/capybari-repo/capybari-analyzer-dependencies
 
 go 1.27.1
 
 require (
-	github.com/capybari/capybari-core v0.0.0
-	github.com/capybari/capybari-schemas v0.0.0
+	github.com/capybari-repo/capybari-core v0.0.0
+	github.com/capybari-repo/capybari-schemas v0.0.0
 	github.com/google/osv-scalibr v0.5.3
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -63,6 +63,6 @@ require (
 	www.velocidex.com/golang/go-ntfs v0.2.0 // indirect
 )
 
-replace github.com/capybari/capybari-core => ../capybari-core
+replace github.com/capybari-repo/capybari-core => ../capybari-core
 
-replace github.com/capybari/capybari-schemas => ../capybari-schemas
+replace github.com/capybari-repo/capybari-schemas => ../capybari-schemas

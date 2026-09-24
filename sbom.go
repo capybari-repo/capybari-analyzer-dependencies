@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/capybari/capybari-core/analyzer"
-	"github.com/capybari/capybari-core/facts"
+	"github.com/capybari-repo/capybari-core/analyzer"
+	"github.com/capybari-repo/capybari-core/facts"
 )
 
 // Minimal CycloneDX 1.6 JSON model (https://cyclonedx.org/docs/1.6/json/).

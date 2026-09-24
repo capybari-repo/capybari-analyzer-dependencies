@@ -137,6 +137,8 @@ func (*Analyzer) Analyze(ctx context.Context, in *analyzer.Input) (*analyzer.Res
 		if lockDirs[dir+"|"+eco] {
 			continue
 		}
+		added := 0
+		where := ""
 		for name, d := range declared.byDir[dir+"|"+eco] {
 			key := eco + "\x00" + strings.ToLower(name) + "\x00"
 			exists := false
@@ -150,6 +152,11 @@ func (*Analyzer) Analyze(ctx context.Context, in *analyzer.Input) (*analyzer.Res
 				continue
 			}
 			byKey[key] = &facts.Package{Name: name, Ecosystem: eco, Locations: []string{d.where}, Dev: d.dev}
+			added++
+			where = d.where
+		}
+		if added > 0 {
+			manifests = append(manifests, facts.Manifest{Path: where, Ecosystem: eco, Extractor: "declared (no lockfile)", Packages: added})
 		}
 	}
 

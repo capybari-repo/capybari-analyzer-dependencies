@@ -1,0 +1,23 @@
+[
+  {
+    "Eco": "Go",
+    "Name": "github.com/gin-gonic/gin",
+    "Version": "1.7.0",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "Go",
+    "Name": "golang.org/x/text",
+    "Version": "0.3.5",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "Go",
+    "Name": "stdlib",
+    "Version": "1.19",
+    "Direct": true,
+    "Dev": false
+  }
+]

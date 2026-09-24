@@ -1,0 +1,58 @@
+[
+  {
+    "Eco": "npm",
+    "Name": "body-parser",
+    "Version": "1.18.2",
+    "Direct": false,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "express",
+    "Version": "4.16.0",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "jsonwebtoken",
+    "Version": "8.5.1",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "lodash",
+    "Version": "4.17.15",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "moment",
+    "Version": "2.29.1",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "mysql",
+    "Version": "2.18.1",
+    "Direct": true,
+    "Dev": false
+  },
+  {
+    "Eco": "npm",
+    "Name": "nodemon",
+    "Version": "2.0.4",
+    "Direct": true,
+    "Dev": true
+  },
+  {
+    "Eco": "npm",
+    "Name": "qs",
+    "Version": "6.5.1",
+    "Direct": false,
+    "Dev": false
+  }
+]

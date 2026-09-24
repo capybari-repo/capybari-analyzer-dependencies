@@ -1,0 +1,31 @@
+id: dependencies
+name: Dependency Inventory & SBOM
+version: 0.1.0
+category: supply-chain
+summary: Inventories direct and transitive dependencies from lockfiles and manifests across 14 ecosystems and writes a CycloneDX SBOM.
+stability: stable
+core_api: v0
+targets: [repository]
+requires: [inventory]
+provides: [dependencies]
+findings: [unpinned-dependency, non-registry-dependency, duplicate-versions]
+scores: [dependencies]
+cost: medium
+execution:
+  local: true
+  network: none
+  ai: none
+privacy: Runs entirely locally by parsing lockfiles and manifests. Nothing leaves the machine.
+engines:
+  - name: OSV-SCALIBR
+    version: 0.5.3
+    license: Apache-2.0
+    url: https://github.com/google/osv-scalibr
+methodology: https://github.com/capybari/capybari-analyzer-dependencies/blob/main/docs/methodology.md
+follow_ups:
+  - capability: vulns
+    reason: Dependencies with exact versions were found; check them against known-vulnerability advisories (OSV.dev).
+    when:
+      evidence: [dependencies]
+  - capability: tech-detect
+    reason: Resolve which frameworks and libraries these dependencies represent, and whether any are end-of-life.
